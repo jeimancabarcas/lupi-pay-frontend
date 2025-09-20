@@ -3,32 +3,46 @@ import Aura from '@primeuix/themes/aura';
 
 export const MyPreset = definePreset(Aura, {
     semantic: {
-        // primary: {
-        //     50: '#F0F7FF',
-        //     100: '#E0EFFF',
-        //     200: '#C2DFFF',
-        //     300: '#A3CFFF',
-        //     400: '#004D93',
-        //     500: '#003D75',
-        //     600: '#002E57',
-        //     700: '#001E39',
-        //     800: '#000F1C',
-        //     900: '#00070E',
-        //     950: '#000407'
-        // },
-        primary: {
-            50: '#FEF2F2',
-            100: '#FEE2E2',
-            200: '#FECACA',
-            300: '#FCA5A5',
-            400: '#F87171',
-            500: '#b10c0c',
-            600: '#DC2626',
-            700: '#B91C1C',
-            800: '#991B1B',
-            900: '#7F1D1D',
-            950: '#450A0A'
-        },
+      primary: {
+        50: '{blue.50}',
+        100: '{blue.100}',
+        200: '{blue.200}',
+        300: '{blue.300}',
+        400: '{blue.400}',
+        500: '#0A1F44',  // Azul profundo
+        600: '#09203D',
+        700: '#071830',
+        800: '#051023',
+        900: '#030A17',
+        950: '#01040B'
+      },
+      accent: {
+        50: '{green.50}',
+        100: '{green.100}',
+        200: '{green.200}',
+        300: '{green.300}',
+        400: '{green.400}',
+        500: '#3FAE4D',  // Verde suave
+        600: '#369745',
+        700: '#2E803C',
+        800: '#256933',
+        900: '#1D5329',
+        950: '#143D1F'
+      },
+      surface: {
+        0: '#ffffff',
+        50: '#f5f6fa',   // Gris claro (fondos)
+        100: '#e9ecef',
+        200: '#dee2e6',
+        300: '#ced4da',
+        400: '#adb5bd',
+        500: '#6c757d',  // Gris texto secundario
+        600: '#495057',
+        700: '#343a40',
+        800: '#212529',  // Texto principal
+        900: '#121416',
+        950: '#0a0b0c'
+      }
     },
     components: {
         floatlabel: {
