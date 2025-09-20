@@ -1,0 +1,43 @@
+<div class="grid grid-cols-12 w-full h-screen bg-white">
+    <div class="flex flex-col col-span-12 justify-center items-center h-full px-4
+                lg:col-span-12">
+        <div class="w-full px-4 py-12 flex flex-col justify-center items-center 
+                    sm:w-2/3
+                    md:px-6
+                    lg:px-5 lg:w-1/2
+                    xl:w-1/4">
+            <img src="assets/images/logo.png" 
+                alt="logo" 
+                class="w-50 
+                       md:w-40">
+            <p class="text-sm text-gray-500 mb-12">Welcome back to the system</p>
+            <form class="flex flex-col gap-4 w-full">
+                <p-floatlabel variant="on">
+                    <input type="text" class="w-full" pInputText >
+                    <label>Email</label>
+                </p-floatlabel>
+                
+                <p-floatlabel variant="on">
+                    <p-password inputStyleClass="w-full" 
+                    class="w-full" 
+                    [feedback]="false" 
+                    [toggleMask]="true"></p-password>
+                    <label>Password</label>
+                </p-floatlabel>
+
+                <p-button 
+                    styleClass="w-full"
+                    label="Login" 
+                    class="w-full"></p-button>
+            </form>
+
+            <p class="text-xs text-green-200/70 z-10 text-center absolute bottom-0">Lupipay 2025 © All rights reserved</p>
+        </div>
+    </div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 w-full">    
+    <svg viewBox="0 0 1440 320" class="wave-bg shape ">
+        <path fill="#0A1E3F" fill-opacity="1" d="M0,96L80,128C160,160,320,224,480,240C640,256,800,224,960,186.7C1120,149,1280,107,1360,85.3L1440,64V320H0Z"></path>
+            <path fill="#3FAE4D" fill-opacity="0.7" d="M0,160L80,181.3C160,203,320,245,480,224C640,203,800,117,960,80C1120,43,1280,53,1360,58.7L1440,64V320H0Z"></path>
+        </svg>
+</div>  
