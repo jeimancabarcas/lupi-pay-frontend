@@ -1,1 +1,119 @@
-<p>pay-in works!</p>
+
+<div class="flex flex-row justify-between items-center gap-2 flex-wrap mb-4 bg-white p-4 rounded-lg border border-gray-200">
+    <div class="flex flex-col gap-1">
+        <h1>Pay-In List</h1>
+        <p class="text-gray-500">Handle the payments in of your customers</p>
+    </div>
+</div>
+<div class="card border border-gray-200 bg-white p-4 rounded-lg flex flex-col gap-4">
+    <div class="text-xs text-gray-500 flex flex-row items-center gap-1">
+        <div class="rounded-full w-2 h-2 bg-green-500"></div>Last update: 9/21/25, 11:46 AM
+        <p-button text icon="pi pi-refresh" label="Refresh" />
+    </div>
+    <h3>Quick Filters</h3>
+    <div class="flex flex-row justify-between items-center gap-2 flex-wrap">
+        <div class="flex flex-row items-center gap-2 flex-wrap"> 
+            <div class="card flex justify-center">
+                <p-selectbutton [options]="paymentOptions" optionLabel="name" optionValue="value" />
+            </div>
+            <p-floatlabel variant="on">
+                <p-datepicker selectionMode="range" [readonlyInput]="true"  showIcon="true"/>
+                <label>Date Range</label>
+            </p-floatlabel>
+        </div>
+        <div class="flex flex-row justify-end items-center gap-2">
+            <p-floatlabel variant="on">
+                <p-iconfield>
+                    <p-inputicon class="pi pi-search" />
+                    <input type="text" pInputText />
+                </p-iconfield>
+                <label>Search</label>
+            </p-floatlabel>
+            <p-button outlined severity="secondary" icon="pi pi-file-excel"/>
+            <p-button outlined severity="secondary" icon="pi pi-cloud-upload" />
+        </div>
+    </div>
+    <p-table
+        [value]="movements"
+        [rows]="10"
+        scrollable
+    >
+        <ng-template #header>
+            <tr>
+                <th pSortableColumn="id">
+                    <div class="flex flex-row items-center justify-between gap-2 cursor-pointer">
+                        ID
+                        <p-sortIcon field="id" />
+                    </div>
+                </th>
+                <th pSortableColumn="reference">
+                    <div class="flex flex-row items-center justify-between gap-2 cursor-pointer">
+                        Reference
+                        <p-sortIcon field="reference" />
+                    </div>
+                </th>
+                <th pSortableColumn="amount">
+                    <div class="flex flex-row items-center justify-between gap-2 cursor-pointer">
+                        Amount
+                        <p-sortIcon field="amount" />
+                    </div>
+                </th>
+                <th pSortableColumn="status">
+                    <div class="flex flex-row items-center justify-between gap-2 cursor-pointer">
+                        Status
+                        <p-sortIcon field="status" />
+                    </div>
+                </th>
+                <th pSortableColumn="user">
+                    <div class="flex flex-row items-center justify-between gap-2 cursor-pointer">
+                        User
+                        <p-sortIcon field="user" />
+                    </div>
+                </th>
+                <th pSortableColumn="bank">
+                    <div class="flex flex-row items-center justify-between gap-2 cursor-pointer">
+                        Bank
+                        <p-sortIcon field="bank" />
+                    </div>
+                </th>
+                <th pSortableColumn="email">
+                    <div class="flex flex-row items-center justify-between gap-2 cursor-pointer">
+                        Email
+                        <p-sortIcon field="email" />
+                    </div>
+                </th>
+                <th pSortableColumn="creationDate">
+                    <div class="flex flex-row items-center justify-between gap-2 cursor-pointer">
+                        Creation Date
+                        <p-sortIcon field="creationDate" />
+                    </div>
+                </th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template #body let-movement>
+            <tr>
+                <td>{{ movement.id }}</td>
+                <td>{{ movement.reference }}</td>
+                <td>{{ movement.amount }}</td>
+                <td>
+                    <p-tag severity="{{ movement.statusColor }}" value="{{ movement.status }}" />
+                </td>
+                <td>{{ movement.user }}</td>
+                <td>{{ movement.bank }}</td>
+                <td>{{ movement.email }}</td>
+                <td>{{ movement.creationDate }}</td>
+                <td>
+                    <p-button text icon="pi pi-ellipsis-h" severity="secondary" />
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template #footer>
+            <tr>
+                <td colspan="9">
+                    <p-paginator appendTo="body" [first]="1" [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10, 20, 30]"/>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

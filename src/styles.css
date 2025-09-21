@@ -6,10 +6,27 @@
 * {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
+    font-size: 13px;
 }
 
 body {
     background-color: #F9FAFB;
+    color: #0A1F44;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0A1F44;
+}
+h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0A1F44;
+}
+h3 {
+    font-size: 18px;
+    font-weight: 600;
     color: #0A1F44;
 }
 
@@ -20,7 +37,7 @@ body {
       --color-blue-200: #93c5fd;
       --color-blue-300: #60a5fa;
       --color-blue-400: #3b82f6;
-      --color-blue-500: #0A1F44;
+      --color-blue-500: #0a224b;
       --color-blue-600: #09203D;
       --color-blue-700: #09203D;
       --color-blue-800: #071830;
@@ -50,5 +67,14 @@ body {
       --color-red-800: #991B1B;
       --color-red-900: #7F1D1D;
       --color-red-950: #450A0A;
+    }
+
+    .text-xs {
+        font-size: 11px !important; /* 12px */
+        line-height: 1rem !important; /* 16px */
+    }
+    .text-sm {
+        font-size: 12px !important; /* 12px */
+        line-height: 1rem !important; /* 16px */
     }
 }

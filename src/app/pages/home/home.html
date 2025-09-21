@@ -3,7 +3,7 @@
     <div class="hidden
                 lg:grid lg:grid-rows-12 bg-white col-span-3 max-h-screen
                 xl:col-span-2">
-        <div class="row-span-1 w-full p-4 border border-gray-200">
+        <div class="row-span-1 flex justify-center items-center w-full p-4 border border-gray-200">
             <img src="assets/images/logo.png" alt="logo" class="w-30">
         </div>
        <!-- <div class="row-span-10 pt-4 w-full justify-center text-blue-500/60 text-sm border-r border-gray-200">
@@ -16,7 +16,7 @@
                 }
             </div>
         </div>-->
-        <div class="row-span-10 pt-4 w-full justify-center text-blue-500/60 text-sm border-r border-gray-200">
+        <div class="row-span-10 pt-4 w-full justify-center text-blue-500/60 border-r border-gray-200">
             <div class="overflow-y-auto h-full">
                 @for (item of menu; track item.route) {
                     <div 
@@ -42,8 +42,7 @@
     <div class="grid grid-rows-12 col-span-12 max-h-screen 
                 lg:col-span-9
                 xl:col-span-10">
-        <div class="row-span-1 border-b border-gray-200">
-            <div class="flex justify-between items-center bg-white h-full px-4">
+            <div class="row-span-1 border-b border-gray-200 flex justify-between items-center bg-white h-full px-4">
                 <div class="hidden 
                             lg:block">
                     <app-breadcrumb></app-breadcrumb>
@@ -58,10 +57,9 @@
                     <p-button badgeSeverity="contrast" severity="secondary" rounded icon="pi pi-user" (onClick)="op.toggle($event)" />
                 </div>
             </div>
-            <div class="p-4 texture flex-1 overflow-y-auto">
+            <div class="row-span-11 max-w-screen p-4 flex-1 overflow-y-auto overflow-x-hidden h-full">
                 <router-outlet></router-outlet>
             </div>
-        </div>
     </div>
 </div>
 <p-drawer [(visible)]="drawerVisible" [closable]="false"> 
@@ -72,7 +70,7 @@
             </div>
         </div>
         <div class="h-full">
-            <div class="row-span-10 pt-4 w-full justify-center text-blue-500/60 text-sm">
+            <div class="row-span-10 pt-4 w-full justify-center text-blue-500/60">
                 <div class="overflow-y-auto h-full">
                     @for (item of menu; track item.route) {
                         <div [routerLink]="item.route" 
@@ -98,16 +96,16 @@
     <ng-template #content>
         <div class="flex flex-col gap-1 w-50">
             <div class="flex flex-row gap-2 items-center  border-b border-gray-300 pb-4">
-                <div class="flex justify-center items-center bg-green-500/20 rounded-full p-2 w-9 h-9 text-sm font-semibold ">
-                    JC
+                <div class="flex justify-center items-center bg-green-500/20 rounded-full p-2 w-9 h-9 font-semibold ">
+                    JD
                 </div>
                 <div class="flex flex-col">
-                    <p class="text-sm font-semibold">Juan Carlos</p>
-                    <p class="text-xs text-gray-500">juan.carlos@gmail.com</p>
+                    <p class="font-semibold">John Doe</p>
+                    <p class="text-xs text-gray-500">john.doe@gmail.com</p>
                 </div>
             </div>
-            <p-button severity="secondary" size="small" text icon="pi pi-cog" label="Settings" styleClass="w-full"/>
-            <p-button severity="secondary" size="small" outlined icon="pi pi-sign-out" label="Logout" styleClass="w-full"/>
+            <p-button severity="secondary" text icon="pi pi-cog" label="Settings" styleClass="w-full"/>
+            <p-button severity="secondary" outlined icon="pi pi-sign-out" label="Logout" styleClass="w-full"/>
         </div>
     </ng-template>
 </p-popover>
