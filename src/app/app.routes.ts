@@ -1,11 +1,12 @@
 import { Routes } from '@angular/router';
 import { Login } from './pages/login/login';
-import { Dashboard } from './pages/dashboard/dashboard';
+import { Home } from './pages/home/home';
 
 export const routes: Routes = [ 
     {
         path: '',
-        component: Dashboard
+        component: Home,
+        loadChildren: () => import('./pages/home/home.routes').then(m => m.homeRoutes)
     },
     {
         path: 'login',

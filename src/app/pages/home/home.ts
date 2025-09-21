@@ -3,14 +3,15 @@ import { ButtonModule } from 'primeng/button';
 import { Breadcrumb } from './components/breadcrumb/breadcrumb';
 import { DrawerModule } from 'primeng/drawer';
 import { PopoverModule } from 'primeng/popover';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
-  selector: 'app-dashboard',
-  imports: [ButtonModule, Breadcrumb, DrawerModule, PopoverModule],
-  templateUrl: './dashboard.html',
-  styleUrl: './dashboard.css'
+  selector: 'app-home',
+  imports: [ButtonModule, Breadcrumb, DrawerModule, PopoverModule, RouterOutlet, RouterLink, RouterLinkActive],
+  templateUrl: './home.html',
+  styleUrl: './home.css'
 })
-export class Dashboard {
+export class Home {
   drawerVisible = false;
 
 

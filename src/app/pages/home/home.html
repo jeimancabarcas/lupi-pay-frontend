@@ -19,8 +19,11 @@
         <div class="row-span-10 pt-4 w-full justify-center text-blue-500/60 text-sm border-r border-gray-200">
             <div class="overflow-y-auto h-full">
                 @for (item of menu; track item.route) {
-                    <div class="flex items-center py-3 px-8 my-1 cursor-pointer
-                                hover:text-blue-500 hover:font-bold hover:border-r-4 hover:bg-green-500/20 hover:border-blue-500/90 transition-all duration-100">
+                    <div 
+                    [routerLink]="item.route"
+                    routerLinkActive="text-blue-500 font-semibold border-r-2 bg-green-500/20 border-blue-500/90 transition-all duration-100"
+                    class="flex items-center py-3 px-8 cursor-pointer
+                                hover:text-blue-500 hover:border-r-2 hover:bg-green-500/20 hover:border-blue-500/90 hover:transition-all hover:duration-100">
                         <i class="pi {{ item.icon }} mr-4"></i><span>{{ item.label }}</span>
                     </div>
                 }
@@ -45,17 +48,18 @@
                             lg:block">
                     <app-breadcrumb></app-breadcrumb>
                 </div>
-                <div class="lg:hidden">
+                <div class="flex flex-row gap-2 items-center
+                    lg:hidden">
                     <p-button severity="secondary" rounded text icon="pi pi-bars" (onClick)="drawerVisible = true" />
                 </div>
+                <img src="assets/images/logo.png" alt="logo" class="w-30 lg:hidden">
                 <div class="mr-2 flex flex-row gap-2">
                     <p-button  badge="2" badgeSeverity="success" badgeSeverity="contrast" text severity="secondary" rounded icon="pi pi-bell" />
                     <p-button badgeSeverity="contrast" severity="secondary" rounded icon="pi pi-user" (onClick)="op.toggle($event)" />
                 </div>
             </div>
             <div class="p-4 texture flex-1 overflow-y-auto">
-                <h1 class="text-3xl font-semibold text-blue-500">Pay In</h1>
-                
+                <router-outlet></router-outlet>
             </div>
         </div>
     </div>
@@ -71,8 +75,11 @@
             <div class="row-span-10 pt-4 w-full justify-center text-blue-500/60 text-sm">
                 <div class="overflow-y-auto h-full">
                     @for (item of menu; track item.route) {
-                        <div class="flex items-center py-3 px-8 my-1 cursor-pointer
-                                    hover:text-blue-500 hover:font-bold hover:border-r-4 hover:bg-green-500/20 hover:border-blue-500/90 transition-all duration-100">
+                        <div [routerLink]="item.route" 
+                            (click)="drawerVisible = false"
+                            routerLinkActive="text-blue-500 font-semibold border-r-2 bg-green-500/20 border-blue-500/90 transition-all duration-100"
+                             class="flex items-center py-3 px-8 my-1 cursor-pointer
+                                    hover:text-blue-500 hover:font-semibold hover:border-r-2 hover:bg-green-500/20 hover:border-blue-500/90 transition-all duration-100">
                             <i class="pi {{ item.icon }} mr-4"></i><span>{{ item.label }}</span>
                         </div>
                     }
