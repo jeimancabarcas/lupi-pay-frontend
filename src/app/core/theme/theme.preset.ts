@@ -4,19 +4,6 @@ import Aura from '@primeuix/themes/aura';
 export const MyPreset = definePreset(Aura, {
     semantic: {
       primary: {
-        50: '{blue.50}',
-        100: '{blue.100}',
-        200: '{blue.200}',
-        300: '{blue.300}',
-        400: '{blue.400}',
-        500: '#0A1F44',  // Azul profundo
-        600: '#09203D',
-        700: '#071830',
-        800: '#051023',
-        900: '#030A17',
-        950: '#01040B'
-      },
-      accent: {
         50: '{green.50}',
         100: '{green.100}',
         200: '{green.200}',
@@ -28,6 +15,19 @@ export const MyPreset = definePreset(Aura, {
         800: '#256933',
         900: '#1D5329',
         950: '#143D1F'
+      },
+      accent: {
+        50: '#dbeafe',   // Azul muy claro
+        100: '#bfdbfe',  // Azul claro
+        200: '#93c5fd',  // Azul medio claro
+        300: '#60a5fa',  // Azul medio
+        400: '#3b82f6',  // Azul medio oscuro
+        500: '#0A1F44',  // Azul profundo
+        600: '#09203D',  // Azul más profundo
+        700: '#071830',  // Azul oscuro
+        800: '#051023',  // Azul muy oscuro
+        900: '#030A17',  // Azul casi negro
+        950: '#01040B'   // Azul negro
       },
       surface: {
         0: '#ffffff',

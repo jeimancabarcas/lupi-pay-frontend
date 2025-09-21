@@ -1,0 +1,106 @@
+<div class="grid grid-cols-12 w-full h-screen">
+    <!-- Sidebar -->
+    <div class="hidden
+                lg:grid lg:grid-rows-12 bg-white col-span-3 max-h-screen
+                xl:col-span-2">
+        <div class="row-span-1 w-full p-4 border border-gray-200">
+            <img src="assets/images/logo.png" alt="logo" class="w-30">
+        </div>
+       <!-- <div class="row-span-10 pt-4 w-full justify-center text-blue-500/60 text-sm border-r border-gray-200">
+            <div class="overflow-y-auto h-full">
+                @for (item of menu; track item.route) {
+                    <div class="flex items-center p-3 mx-3 my-1 rounded-lg cursor-pointer
+                                hover:text-blue-500 hover:font-bold hover:bg-green-500/20 hover:border-green-700 transition-all duration-200">
+                        <i class="pi {{ item.icon }} mr-4"></i><span>{{ item.label }}</span>
+                    </div>
+                }
+            </div>
+        </div>-->
+        <div class="row-span-10 pt-4 w-full justify-center text-blue-500/60 text-sm border-r border-gray-200">
+            <div class="overflow-y-auto h-full">
+                @for (item of menu; track item.route) {
+                    <div class="flex items-center py-3 px-8 my-1 cursor-pointer
+                                hover:text-blue-500 hover:font-bold hover:border-r-4 hover:bg-green-500/20 hover:border-blue-500/90 transition-all duration-100">
+                        <i class="pi {{ item.icon }} mr-4"></i><span>{{ item.label }}</span>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="row-span-1 border-r border-gray-200 flex flex-col justify-end">
+            <div class=" ">
+
+                <svg viewBox="0 0 1440 320" class="wave-bg shape ">
+                    <path fill="#0A1E3F" fill-opacity="1" d="M0,96L80,128C160,160,320,224,480,240C640,256,800,224,960,186.7C1120,149,1280,107,1360,85.3L1440,64V320H0Z"></path>
+                    <path fill="#3FAE4D" fill-opacity="0.7" d="M0,160L80,181.3C160,203,320,245,480,224C640,203,800,117,960,80C1120,43,1280,53,1360,58.7L1440,64V320H0Z"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="grid grid-rows-12 col-span-12 max-h-screen 
+                lg:col-span-9
+                xl:col-span-10">
+        <div class="row-span-1 border-b border-gray-200">
+            <div class="flex justify-between items-center bg-white h-full px-4">
+                <div class="hidden 
+                            lg:block">
+                    <app-breadcrumb></app-breadcrumb>
+                </div>
+                <div class="lg:hidden">
+                    <p-button severity="secondary" rounded text icon="pi pi-bars" (onClick)="drawerVisible = true" />
+                </div>
+                <div class="mr-2 flex flex-row gap-2">
+                    <p-button  badge="2" badgeSeverity="success" badgeSeverity="contrast" text severity="secondary" rounded icon="pi pi-bell" />
+                    <p-button badgeSeverity="contrast" severity="secondary" rounded icon="pi pi-user" (onClick)="op.toggle($event)" />
+                </div>
+            </div>
+            <div class="p-4 texture flex-1 overflow-y-auto">
+                <h1 class="text-3xl font-semibold text-blue-500">Pay In</h1>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<p-drawer [(visible)]="drawerVisible" [closable]="false"> 
+    <ng-template #headless>
+        <div class="flex items-center gap-2">
+            <div class="row-span-1 w-full p-4">
+                <img src="assets/images/logo.png" alt="logo" class="w-30">
+            </div>
+        </div>
+        <div class="h-full">
+            <div class="row-span-10 pt-4 w-full justify-center text-blue-500/60 text-sm">
+                <div class="overflow-y-auto h-full">
+                    @for (item of menu; track item.route) {
+                        <div class="flex items-center py-3 px-8 my-1 cursor-pointer
+                                    hover:text-blue-500 hover:font-bold hover:border-r-4 hover:bg-green-500/20 hover:border-blue-500/90 transition-all duration-100">
+                            <i class="pi {{ item.icon }} mr-4"></i><span>{{ item.label }}</span>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="border-r border-gray-200 flex flex-col justify-end absolute bottom-0 left-0 right-0">
+                <svg viewBox="0 0 1440 320" class="wave-bg shape ">
+                    <path fill="#0A1E3F" fill-opacity="1" d="M0,96L80,128C160,160,320,224,480,240C640,256,800,224,960,186.7C1120,149,1280,107,1360,85.3L1440,64V320H0Z"></path>
+                    <path fill="#3FAE4D" fill-opacity="0.7" d="M0,160L80,181.3C160,203,320,245,480,224C640,203,800,117,960,80C1120,43,1280,53,1360,58.7L1440,64V320H0Z"></path>
+                </svg>
+        </div>
+    </ng-template>
+</p-drawer>
+<p-popover #op>
+    <ng-template #content>
+        <div class="flex flex-col gap-1 w-50">
+            <div class="flex flex-row gap-2 items-center  border-b border-gray-300 pb-4">
+                <div class="flex justify-center items-center bg-green-500/20 rounded-full p-2 w-9 h-9 text-sm font-semibold ">
+                    JC
+                </div>
+                <div class="flex flex-col">
+                    <p class="text-sm font-semibold">Juan Carlos</p>
+                    <p class="text-xs text-gray-500">juan.carlos@gmail.com</p>
+                </div>
+            </div>
+            <p-button severity="secondary" size="small" text icon="pi pi-cog" label="Settings" styleClass="w-full"/>
+            <p-button severity="secondary" size="small" outlined icon="pi pi-sign-out" label="Logout" styleClass="w-full"/>
+        </div>
+    </ng-template>
+</p-popover>
