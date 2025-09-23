@@ -4,17 +4,17 @@ import Aura from '@primeuix/themes/aura';
 export const MyPreset = definePreset(Aura, {
     semantic: {
       primary: {
-        50: '{green.50}',
-        100: '{green.100}',
-        200: '{green.200}',
-        300: '{green.300}',
-        400: '{green.400}',
-        500: '#3FAE4D',  // Verde suave
-        600: '#369745',
-        700: '#2E803C',
-        800: '#256933',
-        900: '#1D5329',
-        950: '#143D1F'
+        50: '#FAF6FE',   // Violeta muy claro
+        100: '#F4E9FE',  // Violeta claro
+        200: '#EBD8FC',  // Violeta medio claro
+        300: '#DBB8FA',  // Violeta medio
+        400: '#C58BF5',  // Violeta medio oscuro
+        500: '#65268E',  // Violeta principal
+        600: '#993EDF',  // Violeta oscuro
+        700: '#842CC4',  // Violeta más oscuro
+        800: '#6F29A0',  // Violeta muy oscuro
+        900: '#65268E',  // Violeta profundo
+        950: '#3E0D5E'   // Violeta casi negro
       },
       accent: {
         50: '#dbeafe',   // Azul muy claro

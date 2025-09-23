@@ -1,80 +1,26 @@
 @import "tailwindcss";
 @import "primeicons/primeicons.css";
+@import "./packages/brand/purple.css";
 
-
-
-* {
+html {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
-    font-size: 13px;
+    font-size: var(--text-base);
+    line-height: var(--text-base--line-height);
 }
-
 body {
     background-color: #F9FAFB;
-    color: #0A1F44;
 }
 
 h1 {
     font-size: 24px;
     font-weight: 600;
-    color: #0A1F44;
 }
 h2 {
     font-size: 20px;
     font-weight: 600;
-    color: #0A1F44;
 }
 h3 {
     font-size: 18px;
     font-weight: 600;
-    color: #0A1F44;
-}
-
-@layer base {
-    :root {
-      --color-blue-50: #dbeafe;
-      --color-blue-100: #bfdbfe;
-      --color-blue-200: #93c5fd;
-      --color-blue-300: #60a5fa;
-      --color-blue-400: #3b82f6;
-      --color-blue-500: #0a224b;
-      --color-blue-600: #09203D;
-      --color-blue-700: #09203D;
-      --color-blue-800: #071830;
-      --color-blue-900: #051023;
-      --color-blue-950: #030A17;
-
-      --color-green-50: #f0fdf4;
-      --color-green-100: #dcfce7;
-      --color-green-200: #bbf7d0;
-      --color-green-300: #86efac;
-      --color-green-400: #4ade80;
-      --color-green-500: #3FAE4D;
-      --color-green-600: #369745;
-      --color-green-700: #2E803C;
-      --color-green-800: #256933;
-      --color-green-900: #1D5329;
-      --color-green-950: #143D1F;
-  
-      --color-red-50: #FEF2F2;
-      --color-red-100: #FEE2E2;
-      --color-red-200: #FECACA;
-      --color-red-300: #FCA5A5;
-      --color-red-400: #F87171;
-      --color-red-500: #b10c0c;
-      --color-red-600: #DC2626;
-      --color-red-700: #B91C1C;
-      --color-red-800: #991B1B;
-      --color-red-900: #7F1D1D;
-      --color-red-950: #450A0A;
-    }
-
-    .text-xs {
-        font-size: 11px !important; /* 12px */
-        line-height: 1rem !important; /* 16px */
-    }
-    .text-sm {
-        font-size: 12px !important; /* 12px */
-        line-height: 1rem !important; /* 16px */
-    }
 }
