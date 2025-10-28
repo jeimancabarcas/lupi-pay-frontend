@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { afterNextRender, Component } from '@angular/core';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { PaginatorModule } from 'primeng/paginator';
@@ -25,6 +25,11 @@ import { DatePickerModule } from 'primeng/datepicker';
 })
 export class Receipts {
 
+  constructor() {
+    afterNextRender(() => {
+      console.log('afterNextRender');
+    });
+  }
   paymentOptions: any[] = [
     { name: 'Today', value: 1 },
     { name: 'Yesterday', value: 2 },
@@ -67,4 +72,5 @@ export class Receipts {
       creationDate: '2021-01-01'
     }
   ];
+
 }

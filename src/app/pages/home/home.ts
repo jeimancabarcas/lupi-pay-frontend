@@ -4,10 +4,11 @@ import { Breadcrumb } from './components/breadcrumb/breadcrumb';
 import { DrawerModule } from 'primeng/drawer';
 import { PopoverModule } from 'primeng/popover';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  imports: [ButtonModule, Breadcrumb, DrawerModule, PopoverModule, RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [ButtonModule, Breadcrumb, DrawerModule, PopoverModule, RouterOutlet, RouterLink, RouterLinkActive, CommonModule],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
